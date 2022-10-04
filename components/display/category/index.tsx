@@ -2,20 +2,28 @@ import React from "react";
 import Item from "@/components/display/category/item";
 import {Title, Wrapper} from "@/components/display/category/styles";
 
-export interface ICategory {
+export interface IItems {
+    main:string,
+    sub:string[],
+}
+
+export interface mainCategory{
     title:string,
     icon:JSX.Element,
-    items:{
-        main:string
-        sub:string[]
-    },
+}
+
+export interface ICategory {
+    // main:mainCategory,
+    title:string,
+    icon:JSX.Element,
+    items:IItems[],
 }
 
 const Category = ({title,icon,items}:ICategory) => {
     return (
         <Wrapper>
             <Title>{title}</Title>
-            <Item icon={icon} items={items} />
+            {items.map((item,id)=> <Item key={id}icon={icon} items={item} />)}
         </Wrapper>
     );
 }

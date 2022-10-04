@@ -1,12 +1,10 @@
 import React, {useState} from "react";
 import {DropDown, SubItem, Title, Wrapper} from "@/components/display/category/item/styles";
+import {IItems} from "@/components/display/category";
 
 export interface IItem {
     icon: JSX.Element,
-    items:{
-        main:string
-        sub:string[]
-    },
+    items:IItems,
 }
 
 const Item = ({icon, items}: IItem) => {
