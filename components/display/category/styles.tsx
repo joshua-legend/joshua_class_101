@@ -9,8 +9,14 @@ export const Wrapper = styled.div`
   padding: 0 0.5rem;
 `
 
-export const Title = styled.span`
+export const Main = styled.div`
+  display: flex;
+`
 
-  ::before {
-  }
+export const Title = styled.span`
+  font-family: 'rokaf';
+`
+
+export const Icon = styled.span`
+    
 `
