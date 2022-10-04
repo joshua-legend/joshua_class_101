@@ -12,24 +12,17 @@ export const global = css`
     color: inherit;
     text-decoration: none;
   }
-
   * {
     box-sizing: border-box;
     list-style-type: none;
     padding:0
   }
   input::-ms-clear,
-  input::-ms-reveal {
-    display: none;
-    width: 0;
-    height: 0;
-  }
+  input::-ms-reveal {display: none;width: 0;height: 0;}
   input::-webkit-search-decoration,
   input::-webkit-search-cancel-button,
   input::-webkit-search-results-button,
-  input::-webkit-search-results-decoration {
-    display: none;
-  }
+  input::-webkit-search-results-decoration {display: none;}
   @media (prefers-color-scheme: dark) {
     html {
       color-scheme: dark;
