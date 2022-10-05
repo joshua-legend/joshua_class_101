@@ -6,16 +6,17 @@ interface IDropDown {
 
 interface IWrapper{
     isMainOpen:boolean,
+    backgroundColor?:string,
 }
 export const Wrapper = styled.div<IWrapper>`
   display: ${props => (props.isMainOpen ? 'flex' : 'none')};;
   opacity: ${props => (props.isMainOpen ? '1' : '0')};
   flex-direction: column;
   padding: 0.5rem 1.25rem;
-  transition: all 1s;
+  transition: all .5s;
+  cursor: pointer;
   :hover {
-    color: #ffc7d9;
-    background-color: #FFF0F5;
+    color: ${props => (props.backgroundColor)};
     border-radius: 10px;
   }
 `
@@ -29,6 +30,8 @@ export const Title = styled.div`
     margin-right:5px;
   }
 `
+
+
 export const Sub_subject = styled.div`
 `
 export const DropDown = styled.div<IDropDown>`

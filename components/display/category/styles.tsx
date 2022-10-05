@@ -1,6 +1,4 @@
 import styled from '@emotion/styled';
-
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -8,8 +6,18 @@ export const Wrapper = styled.div`
   margin: 1rem 0;
   padding: 0 0.5rem;
 `
+export const Icon = styled.span`
+  padding-right: 8px;
+  padding-top: 1px;
+  color:#4b636e;
+`
 
-export const Main = styled.div`
+interface IMain {
+    background?:string,
+}
+
+
+export const Main = styled.div<IMain>`
   display: flex;
   position: relative;
   transition: all 0.25s;
@@ -21,27 +29,30 @@ export const Main = styled.div`
     content: " ";
     display: block;
     position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    inset: 0 0 0 0;
-    background: hsl(200 100% 80%);
-    z-index: -5;
+    inset: 30px 0 0 0;
+    background: ${props => (props.background)};
+    z-index: 1;
     transition: transform .3s ease;
   }
   &:hover {
+    animation: tilt-shaking .4s ease-in-out;
     &:before{
       transform: scaleX(1);
       transform-origin: bottom left;
     }
   }
-`
-
-export const Icon = styled.span`
-  padding-right: 8px;
-  padding-top: 1px;
+  @keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-2deg); }
+    100% { transform: rotate(0deg); }
+  }
 `
 
 export const Title = styled.span`
   font-family: 'rokaf';
+  color:#4b636e;
 `
 export const Arrow = styled.div`
   padding-top:1px;
