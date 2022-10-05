@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 
 
-interface ITooltip {
+interface IWrapper {
     color?:string,
 }
 
 export const Tooltip = styled.span`
   position: absolute;
-  top: 10px;
-  font-size: 14px;
+  top: 5px;
+  font-size: 8px;
   background: #ffffff;
   color: #858585;
   padding: 5px 8px;
@@ -17,7 +17,6 @@ export const Tooltip = styled.span`
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
   ::before {
     position: absolute;
     content: "";
@@ -31,7 +30,7 @@ export const Tooltip = styled.span`
   }
 `
 
-export const Wrapper = styled.li<ITooltip>`
+export const Wrapper = styled.li<IWrapper>`
   position: relative;
   background: #ffffff;
   border-radius: 50%;
@@ -48,7 +47,7 @@ export const Wrapper = styled.li<ITooltip>`
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   :hover{
-    background: #${props => props.color};
+    background: ${props => props.color};
   }
   &:hover span{
     top: -45px;

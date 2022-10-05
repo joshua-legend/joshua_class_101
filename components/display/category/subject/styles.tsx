@@ -20,7 +20,7 @@ export const Wrapper = styled.div<IWrapper>`
     border-radius: 10px;
   }
 `
-export const Title = styled.div`
+export const Title = styled.ul`
   display: flex;
   align-items: center;
   margin:5px 0;

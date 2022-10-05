@@ -1,11 +1,12 @@
-import React, {PropsWithChildren} from "react";
+import React from "react";
 import {Wrapper} from "./styles";
-
-
-const Contents: React.FC<PropsWithChildren> = ({children}) => {
+interface IContent {
+    contents:JSX.Element,
+}
+const Contents: React.FC<IContent> = ({contents}:IContent) => {
     return (
         <Wrapper>
-            {children}
+            {contents}
         </Wrapper>
     );
 }

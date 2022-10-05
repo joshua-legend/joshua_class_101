@@ -2,12 +2,14 @@ import React from "react";
 import {Frame} from "./styles";
 import Contents from "@/layouts/mainframe/contents";
 import Sidebar from "@/layouts/mainframe/sidebar";
-
-const MainFrame: React.FC = () => {
+interface IMainFrame {
+    contents:JSX.Element,
+}
+const MainFrame: React.FC<IMainFrame> = ({contents}:IMainFrame) => {
     return (
         <Frame>
             <Sidebar />
-            <Contents>123</Contents>
+            <Contents contents={contents} />
         </Frame>
     );
 }

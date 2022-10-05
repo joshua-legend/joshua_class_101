@@ -1,4 +1,7 @@
 import styled from '@emotion/styled';
+import useMediaQuery from "../../../hooks/useMediaQuery";
+import {keyframes} from "@emotion/react";
+
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,7 +18,13 @@ export const Icon = styled.span`
 interface IMain {
     background?:string,
 }
-
+const test = () => keyframes`
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(0eg); }
+  75% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+`
 
 export const Main = styled.div<IMain>`
   display: flex;
@@ -35,20 +44,29 @@ export const Main = styled.div<IMain>`
     transition: transform .3s ease;
   }
   &:hover {
-    animation: tilt-shaking .4s ease-in-out;
+    animation: ${()=>test()} .4s ease-in-out;
     &:before{
       transform: scaleX(1);
       transform-origin: bottom left;
     }
   }
-  @keyframes tilt-shaking {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(2deg); }
-    50% { transform: rotate(0eg); }
-    75% { transform: rotate(-2deg); }
-    100% { transform: rotate(0deg); }
-  }
+
+  ${()=>useMediaQuery(3)}{font-size:18px},
+  ${()=>useMediaQuery(2)}{font-size:14px},
+  ${()=>useMediaQuery(1)}{font-size:10px},
+  ${()=>useMediaQuery(0)}{font-size:8px},
+
+//@keyframes tilt-shaking {
+//  0% { transform: rotate(0deg); }
+//  25% { transform: rotate(2deg); }
+//  50% { transform: rotate(0eg); }
+//  75% { transform: rotate(-2deg); }
+//  100% { transform: rotate(0deg); }
+//}
 `
+
+
+
 
 export const Title = styled.span`
   font-family: 'rokaf';

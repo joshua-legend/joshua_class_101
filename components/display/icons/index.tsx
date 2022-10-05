@@ -2,13 +2,14 @@ import React from "react";
 import {Tooltip, Wrapper} from "@/components/display/icons/styles";
 
 export interface IIcon {
-    toolTip: string,
+    color:string,
     icon: JSX.Element,
+    toolTip: string,
 }
 
-const Icon = ({toolTip, icon}: IIcon) => {
+const Icon = ({color,toolTip, icon}: IIcon) => {
     return (
-        <Wrapper>
+        <Wrapper color={color}>
             <Tooltip>{toolTip}</Tooltip>
             <span>{icon}</span>
         </Wrapper>
