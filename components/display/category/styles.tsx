@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import useMediaQuery from "../../../hooks/useMediaQuery";
-import {keyframes} from "@emotion/react";
+import {tiltShaking} from "@/styles/animations/animations";
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -18,13 +18,6 @@ export const Icon = styled.span`
 interface IMain {
     background?:string,
 }
-const test = () => keyframes`
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(2deg); }
-  50% { transform: rotate(0eg); }
-  75% { transform: rotate(-2deg); }
-  100% { transform: rotate(0deg); }
-`
 
 export const Main = styled.div<IMain>`
   display: flex;
@@ -44,7 +37,7 @@ export const Main = styled.div<IMain>`
     transition: transform .3s ease;
   }
   &:hover {
-    animation: ${()=>test()} .4s ease-in-out;
+    animation: ${()=>tiltShaking()} .4s ease-in-out;
     &:before{
       transform: scaleX(1);
       transform-origin: bottom left;
