@@ -1,4 +1,4 @@
-import {keyframes} from "@emotion/react/dist/emotion-react.cjs";
+import {keyframes} from "@emotion/react";
 
 export const tiltShaking = () => keyframes`
   0% { transform: rotate(0deg); }

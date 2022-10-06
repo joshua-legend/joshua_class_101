@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import {tiltShaking} from "@/styles/animations/animations";
-import useMediaQuery from "@/hooks/useMediaQuery";
 import {breakPoint, mq} from "@/styles/mediaquery/mediaquery";
 import {fontSize} from "@/styles/constantsCSS";
 
@@ -38,7 +37,7 @@ export const Main = styled.div<IMain>`
     transition: transform .3s ease;
   }
   &:hover {
-    animation: ${()=>tiltShaking()} .4s ease-in-out;
+    animation: ${()=>tiltShaking} .4s ease-in-out;
     &:before{
       transform: scaleX(1);
       transform-origin: bottom left;
