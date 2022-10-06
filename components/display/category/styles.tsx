@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 import {tiltShaking} from "@/styles/animations/animations";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import {breakPoint, mq} from "@/styles/mediaquery/mediaquery";
+import {fontSize} from "@/styles/constantsCSS";
+
+interface IMain {background?:string,}
 
 export const Wrapper = styled.div`
   display: flex;
@@ -9,15 +13,12 @@ export const Wrapper = styled.div`
   margin: 1rem 0;
   padding: 0 0.5rem;
 `
+
 export const Icon = styled.span`
   padding-right: 8px;
   padding-top: 1px;
   color:#4b636e;
 `
-
-interface IMain {
-    background?:string,
-}
 
 export const Main = styled.div<IMain>`
   display: flex;
@@ -43,23 +44,9 @@ export const Main = styled.div<IMain>`
       transform-origin: bottom left;
     }
   }
-
-  ${()=>useMediaQuery(3)}{font-size:18px},
-  ${()=>useMediaQuery(2)}{font-size:14px},
-  ${()=>useMediaQuery(1)}{font-size:10px},
-  ${()=>useMediaQuery(0)}{font-size:8px},
-
-//@keyframes tilt-shaking {
-//  0% { transform: rotate(0deg); }
-//  25% { transform: rotate(2deg); }
-//  50% { transform: rotate(0eg); }
-//  75% { transform: rotate(-2deg); }
-//  100% { transform: rotate(0deg); }
-//}
+  ${mq[breakPoint.mobileP]}{font-size:${fontSize.micro}px}
+  
 `
-
-
-
 
 export const Title = styled.span`
   font-family: 'rokaf';
