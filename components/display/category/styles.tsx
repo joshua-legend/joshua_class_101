@@ -43,8 +43,7 @@ export const Main = styled.div<IMain>`
       transform-origin: bottom left;
     }
   }
-  ${mq[breakPoint.mobileP]}{font-size:${fontSize.micro}px}
-  
+  ${mq[breakPoint.laptop]}{font-size:${fontSize.regular}px}
 `
 
 export const Title = styled.span`
@@ -53,5 +52,5 @@ export const Title = styled.span`
 `
 export const Arrow = styled.div`
   padding-top:1px;
-  padding-left:20px;
+  padding-left:10px;
 `

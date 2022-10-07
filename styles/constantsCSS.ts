@@ -1,9 +1,11 @@
 export const fontSize = {
-    large: 48,
-    medium: 28,
-    regular: 18,
-    small: 16,
-    micro: 14,
+    mega: 32,
+    giant: 28,
+    large: 24,
+    medium: 20,
+    regular: 16,
+    small: 12,
+    micro: 8,
 }
 export const colors = {
     white: "#ffffff",
