@@ -3,6 +3,12 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {SwiperWrapper} from "./styles";
 import First from "./first";
 import Second from "./second";
+import ReactMarkdown from 'react-markdown'
+
+
+const markdown = `
+ # 레정두
+`
 
 const Main = ():JSX.Element => {
     return (
@@ -18,7 +24,7 @@ const Main = ():JSX.Element => {
                     <Second />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <First />
+                    <ReactMarkdown>{markdown}</ReactMarkdown>
                 </SwiperSlide>
             </Swiper>
         </SwiperWrapper>

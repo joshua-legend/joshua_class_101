@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div`
   display: flex;
   height: 100vh;
-  width: 100vw;
 `;
 
 export const Card = styled.div`
@@ -13,8 +12,8 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   padding: 20px;
-  margin: 5px;
-  box-shadow: -20px -20px 0px 0px #fb968b;
+  margin: 20px;
+  box-shadow: 10px 10px 10px 10px #fb968b;
   border-radius: 10px;    
   > h2{
     margin: 0px;

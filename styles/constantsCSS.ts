@@ -1,4 +1,5 @@
 export const fontSize = {
+    xmega:50,
     mega: 32,
     giant: 28,
     large: 24,

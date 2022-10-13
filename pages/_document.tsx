@@ -9,7 +9,7 @@ class MyDocument extends Document {
     return (
         <Html>
           <Head>
-            <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Shadows+Into+Light&display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Indie+Flower&family=Shadows+Into+Light&display=swap" rel="stylesheet" />
           </Head>
           <body>
           <Main />
