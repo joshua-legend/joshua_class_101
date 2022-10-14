@@ -4,13 +4,13 @@ import {Tooltip, Wrapper} from "@/components/display/icons/styles";
 export interface IIcon {
     color:string,
     icon: JSX.Element,
-    toolTip: string,
+    toolTip?: string,
 }
 
 const Icon = ({color,toolTip, icon}: IIcon) => {
     return (
         <Wrapper color={color}>
-            <Tooltip>{toolTip}</Tooltip>
+            {toolTip ? <Tooltip>{toolTip}</Tooltip> : null}
             <span>{icon}</span>
         </Wrapper>
     );

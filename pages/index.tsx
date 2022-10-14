@@ -1,11 +1,11 @@
 import type { NextPage } from 'next'
 import MainFrame from "@/layouts/mainframe";
-import home from "../modules/home/home";
+import home from "@/modules/home/home";
 
 const Home: NextPage = () => {
-  const home1 = home();
+  const Home_ = home();
   return (
-      <MainFrame contents={home1}/>
+      <MainFrame contents={Home_}/>
   )
 }
 export default Home
