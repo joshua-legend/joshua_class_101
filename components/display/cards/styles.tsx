@@ -8,23 +8,16 @@ export const Container = styled.div`
 `
 export const Square = styled.div`
   width: 300px;
-  height: 500px;
+  height: 100%;
   background: white;
   border-radius: 4px;
   box-shadow: 0px 20px 50px #D9DBDF;
   transition: all 0.3s ease;
-
   > img {
-    width: 300px;
-    position: absolute;
-    clip: rect(0px, 300px, 220px, 0px);
-    border-radius: 4px;
+    width: 100%;
   }
 
   > h1 {
-    margin: auto;
-    text-align: left;
-    margin-top: 240px;
     padding-left: 30px;
     font-family: 'Merriweather', serif;
     font-size: 24px;
@@ -62,6 +55,7 @@ export const BtnContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: 2rem 0;
 `
 export const InfoContainer = styled.section`
   display: flex;

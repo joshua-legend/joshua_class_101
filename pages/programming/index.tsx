@@ -1,13 +1,16 @@
 import type { NextPage } from 'next'
-import MainFrame from "@/layouts/mainframe";
-import programming from "@/modules/programming/programming";
-
-
-
+import {CardLayout, FlexLayout, Frame, Title} from "@/modules/programming/styles";
+import Card from "@/components/display/cards";
+import React from "react";
 const Programming: NextPage = () => {
-  const programmingHome = programming();
   return (
-      <MainFrame contents={programmingHome}/>
+      <Frame>
+        <FlexLayout>
+          <Title>HTML Articles!</Title>
+          <CardLayout>
+          </CardLayout>
+        </FlexLayout>
+      </Frame>
   )
 }
 export default Programming

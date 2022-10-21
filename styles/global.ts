@@ -15,7 +15,8 @@ export const global = css`
   * {
     box-sizing: border-box;
     list-style-type: none;
-    padding:0
+    padding:0;
+    margin:0;
   }
   input::-ms-clear,
   input::-ms-reveal {display: none;width: 0;height: 0;}

@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
+      "@/articles/*": ["articles/*"],
       "@/components/*": ["components/*"],
       "@/modules/*": ["modules/*"],
       "@/styles/*": ["styles/*"],
