@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Frame = styled.div`
   width: 100%;
-  height:100%;
+  height:100vh;
   margin-top: 10rem;
   display: flex;
   justify-content: center;

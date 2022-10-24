@@ -9,14 +9,13 @@ import matter from 'gray-matter';
 interface IPage {
   posts:{
     slug:string,
-    frontMatter:{
+    summary:{
       title:string,
       date:string,
     }
   }[]
 }
 const Html: NextPage<IPage> = ({posts}) => {
-  console.log(posts)
   const programmingHome = programming({posts});
   return (
       <MainFrame contents={programmingHome}/>
@@ -25,13 +24,12 @@ const Html: NextPage<IPage> = ({posts}) => {
 export default Html;
 
 export const getStaticProps: GetStaticProps = async () => {
-
   const files = fs.readdirSync(path.join('articles/html'))
   const posts = files.map((filename)=>{
     const slug = filename.replace(".md","");
     const markdownWithMeta = fs.readFileSync(path.join('articles/html',filename), "utf-8",)
-    const { data: frontMatter } = matter(markdownWithMeta)
-    return { slug , frontMatter }
+    const { data: summary } = matter(markdownWithMeta)
+    return { slug , summary }
   })
   return {
     props: {

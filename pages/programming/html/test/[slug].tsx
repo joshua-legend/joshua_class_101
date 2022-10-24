@@ -4,9 +4,10 @@ import {GetStaticProps} from "next";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import {useRouter} from "next/router";
 
 interface Iarticles {
-    frontmatter:{
+    summary:{
         title:string,
         date:string,
     },
@@ -14,16 +15,17 @@ interface Iarticles {
     content:string,
 }
 
-const article = ({frontmatter,slug,content}:Iarticles) => {
-    const _articles = articles({content});
+const article = ({summary,slug,content}:Iarticles) => {
+    const _articles = articles({...summary, content});
     return (
         <MainFrame contents={_articles}/>
     )
 }
 export default article;
 
-export const getStaticPaths = () => {
+export const getStaticPaths = ({}) => {
     const files = fs.readdirSync(path.join('articles/html'))
+
     const paths = files.map((filename)=>({
         params:{
             slug:filename.replace('.md',''),
@@ -37,13 +39,12 @@ export const getStaticPaths = () => {
 export const getStaticProps: GetStaticProps = (context) => {
     const slug = context.params?.slug as String
     const markdownWithMeta = fs.readFileSync(path.join('articles/html',slug+'.md'), "utf-8",)
-    const {data:frontmatter, content} = matter(markdownWithMeta)
+    const {data:summary, content} = matter(markdownWithMeta)
     return {
         props: {
-            frontmatter,
             slug,
+            summary,
             content,
         }
     }
 }
-

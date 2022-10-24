@@ -5,15 +5,16 @@ import Navigation from "@/components/display/navigation";
 import Markup from "@/components/display/markup";
 
 interface IArticles {
+    title:string;
     content:string;
 }
 
 
-const Articles = ({content}:IArticles): JSX.Element => {
+const Articles = ({title,content}:IArticles): JSX.Element => {
     return (
         <Frame>
             <FlexLayout>
-                <Title>HTML Articles!</Title>
+                <Title>{title}</Title>
                 <BreadCrumb/>
                 <Navigation/>
                 <Markup content={content} />
