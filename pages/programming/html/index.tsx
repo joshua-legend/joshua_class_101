@@ -5,6 +5,7 @@ import programming from "@/modules/programming/programming";
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import {useRouter} from "next/router";
 
 interface IPage {
   posts:{
@@ -16,14 +17,15 @@ interface IPage {
   }[]
 }
 const Html: NextPage<IPage> = ({posts}) => {
-  const programmingHome = programming({posts});
+  const url = useRouter().route.split("/")[2];
+  const programmingHome = programming({posts,url});
   return (
       <MainFrame contents={programmingHome}/>
   )
 }
 export default Html;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const files = fs.readdirSync(path.join('articles/html'))
   const posts = files.map((filename)=>{
     const slug = filename.replace(".md","");

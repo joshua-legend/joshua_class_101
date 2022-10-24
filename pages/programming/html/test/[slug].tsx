@@ -25,7 +25,6 @@ export default article;
 
 export const getStaticPaths = ({}) => {
     const files = fs.readdirSync(path.join('articles/html'))
-
     const paths = files.map((filename)=>({
         params:{
             slug:filename.replace('.md',''),

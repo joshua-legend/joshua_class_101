@@ -9,13 +9,14 @@ interface IPage {
             title:string,
             date:string,
         }
-    }[]
+    }[],
+    url:string,
 }
-const Programming = ({posts}:IPage):JSX.Element => {
+const Programming = ({posts,url}:IPage):JSX.Element => {
     return (
         <Frame>
             <FlexLayout>
-                <Title>HTML Articles!</Title>
+                <Title>{url} Articles</Title>
                 <CardLayout>
                     {posts.map((_Card,id)=> <Card key={id} slug={_Card.slug} summary={_Card.summary}/>)}
                 </CardLayout>
