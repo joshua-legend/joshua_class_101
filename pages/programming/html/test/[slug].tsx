@@ -7,23 +7,24 @@ import matter from "gray-matter";
 import {useRouter} from "next/router";
 
 interface Iarticles {
-    summary:{
-        title:string,
-        date:string,
-    },
-    slug:string,
-    content:string,
+    posts:{
+        summary:{
+            title:string,
+            date:string,
+        },
+        content:string,
+    }
 }
 
-const article = ({summary,slug,content}:Iarticles) => {
-    const _articles = articles({...summary, content});
+const article = (posts:Iarticles) => {
+    const _articles = articles({...posts});
     return (
         <MainFrame contents={_articles}/>
     )
 }
 export default article;
 
-export const getStaticPaths = ({}) => {
+export const getStaticPaths = () => {
     const files = fs.readdirSync(path.join('articles/html'))
     const paths = files.map((filename)=>({
         params:{
@@ -39,11 +40,10 @@ export const getStaticProps: GetStaticProps = (context) => {
     const slug = context.params?.slug as String
     const markdownWithMeta = fs.readFileSync(path.join('articles/html',slug+'.md'), "utf-8",)
     const {data:summary, content} = matter(markdownWithMeta)
+    const posts = {summary,content};
     return {
         props: {
-            slug,
-            summary,
-            content,
+            posts
         }
     }
 }

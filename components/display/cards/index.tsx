@@ -6,18 +6,17 @@ import {AiOutlineShareAlt} from "react-icons/ai";
 import {useRouter} from "next/router";
 
 interface ICard {
-    slug:string,
     summary:{
         title:string,
         date:string,
     }
 }
 
-const Card = ({slug,summary}: ICard) => {
+const Card = ({summary}: ICard) => {
     const router = useRouter();
-    const clickContainer = () => router.push(`/programming/html/test/${slug}`)
+    // const clickContainer = () => router.push(`/bulletin/html/test/${slug}`)
     return (
-        <Container onClick={clickContainer} >
+        <Container onClick={undefined} >
             <Square>
                 <img src="/images/card/html5.svg"/>
                 <h1>{summary.title}</h1>

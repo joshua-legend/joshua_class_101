@@ -1,23 +1,26 @@
 import React from "react";
-import {Frame, FlexLayout, Title} from "@/modules/programming/styles";
+import {Frame, FlexLayout, Title} from "@/modules/bulletin/styles";
 import BreadCrumb from "@/components/display/breadcrumb";
 import Navigation from "@/components/display/navigation";
 import Markup from "@/components/display/markup";
 
 interface IArticles {
-    title:string;
-    content:string;
+    posts:{
+        summary:{
+            title:string,
+            date:string,
+        },
+        content:string,
+    }
 }
-
-
-const Articles = ({title,content}:IArticles): JSX.Element => {
+const Articles = ({posts}:IArticles): JSX.Element => {
     return (
         <Frame>
             <FlexLayout>
-                <Title>{title}</Title>
+                <Title>{posts.summary.title}</Title>
                 <BreadCrumb/>
                 <Navigation/>
-                <Markup content={content} />
+                <Markup content={posts.content} />
             </FlexLayout>
         </Frame>
     );
