@@ -1,5 +1,5 @@
 import React from "react";
-import {Frame, FlexLayout, Title, CardLayout} from "@/modules/bulletin/styles";
+import {CardLayout, FlexLayout, Frame, Title} from "@/modules/bulletin/styles";
 import Card from "@/components/display/cards";
 
 interface IPage {

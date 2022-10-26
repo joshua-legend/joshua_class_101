@@ -4,6 +4,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Bulletin from "@/modules/bulletin/bulletin";
+import Subjects from "@/constants/Subjects/Subject";
 
 interface IBulletin {
     subject: string,
@@ -23,13 +24,12 @@ const bulletin = ({subject, posts}: IBulletin) => {
 export default bulletin;
 
 export const getStaticPaths = () => {
-    const subjects = ["html", "css"]
+    const subjects = Subjects
     const paths = subjects.map((sub) => ({
         params:{
             subject:sub,
         }
     }))
-    console.log(paths)
     return {
         paths,
         fallback: false

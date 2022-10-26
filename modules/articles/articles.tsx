@@ -1,18 +1,11 @@
 import React from "react";
-import {Frame, FlexLayout, Title} from "@/modules/bulletin/styles";
+import {FlexLayout, Frame, Title} from "@/modules/bulletin/styles";
 import BreadCrumb from "@/components/display/breadcrumb";
 import Navigation from "@/components/display/navigation";
 import Markup from "@/components/display/markup";
+import {IArticles} from "@/pages/articles/IArticles";
 
-interface IArticles {
-    posts:{
-        summary:{
-            title:string,
-            date:string,
-        },
-        content:string,
-    }
-}
+
 const Articles = ({posts}:IArticles): JSX.Element => {
     return (
         <Frame>
@@ -26,4 +19,4 @@ const Articles = ({posts}:IArticles): JSX.Element => {
     );
 }
 
-export default Articles
+export default Articles;

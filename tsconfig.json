@@ -22,6 +22,7 @@
       "@/layouts/*": ["layouts/*"],
       "@/constants/*": ["constants/*"],
       "@/hooks/*": ["hooks/*"],
+      "@/pages/*": ["pages/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
