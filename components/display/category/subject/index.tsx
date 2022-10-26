@@ -1,25 +1,21 @@
-import React, {useEffect, useState} from "react";
-import {DropDown, Sub_subject, Title, Wrapper} from "@/components/display/category/subject/styles";
+import React, {useState} from "react";
+import {Title, Wrapper} from "@/components/display/category/subject/styles";
 import {ISubCategory} from "@/components/display/category";
+import {useRouter} from "next/router";
 
 interface ISubject {
     subCategory:ISubCategory,
     isMainOpen:boolean,
 }
-
 const Subject = ({subCategory,isMainOpen}: ISubject) => {
-    const [isOpen, setIsOpen] = useState(false)
-    const clickCategory = () => setIsOpen(!isOpen);
+    const router = useRouter();
+    const clickCategory = () => router.push(`/bulletin/${subCategory.link}`)
     return (
         <Wrapper isMainOpen={isMainOpen} backgroundColor={subCategory.color} onClick={clickCategory}>
             <Title>
                 <span>{subCategory.icon}</span>
                 <span>{subCategory.main}</span>
-                <span>{subCategory.sub.length !== 0 ? isOpen ? "👇" : "👉" : null}</span>
             </Title>
-            <DropDown isOpen={isOpen}>
-                {subCategory.sub.map((str, id) => <Sub_subject key={id}>{str}</Sub_subject>)}
-            </DropDown>
         </Wrapper>
     );
 }

@@ -2,13 +2,9 @@ import React from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import First from "./components/first";
 import Second from "./components/second";
-import ReactMarkdown from "react-markdown";
 import styled from "@emotion/styled";
 
 const SwiperWrapper = styled.section`height: 100vh;`
-const markdown = `
- # 레정두
-`
 const Home = ():JSX.Element => {
     return (
         <SwiperWrapper>
@@ -21,9 +17,6 @@ const Home = ():JSX.Element => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Second />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <ReactMarkdown>{markdown}</ReactMarkdown>
                 </SwiperSlide>
             </Swiper>
         </SwiperWrapper>

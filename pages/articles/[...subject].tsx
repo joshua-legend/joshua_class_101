@@ -1,15 +1,15 @@
-import {GetStaticPaths, GetStaticProps} from "next";
+import {GetStaticProps} from "next";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import articles from "@/modules/articles/articles";
 import MainFrame from "@/layouts/mainframe";
 import Subjects from "@/constants/Subjects/Subject";
-import {IArticles} from "./IArticles";
+import {IArticles} from "@/modules/articles/IArticles";
 
 const Subject = (posts:IArticles) => {
     return (
-        <MainFrame contents={articles({...posts})}/>
+        <MainFrame modules={articles({...posts})}/>
     )
 }
 export default Subject;

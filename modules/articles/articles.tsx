@@ -3,7 +3,7 @@ import {FlexLayout, Frame, Title} from "@/modules/bulletin/styles";
 import BreadCrumb from "@/components/display/breadcrumb";
 import Navigation from "@/components/display/navigation";
 import Markup from "@/components/display/markup";
-import {IArticles} from "@/pages/articles/IArticles";
+import {IArticles} from "@/modules/articles/IArticles";
 
 
 const Articles = ({posts}:IArticles): JSX.Element => {

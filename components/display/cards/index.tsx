@@ -6,26 +6,31 @@ import {AiOutlineShareAlt} from "react-icons/ai";
 import {useRouter} from "next/router";
 
 interface ICard {
-    summary:{
-        title:string,
-        date:string,
-    }
+    subject:string,
+    posts:{
+        summary:{
+            title:string,
+            date:string,
+            chips:string,
+        },
+        file:string,
+    },
 }
 
-const Card = ({summary}: ICard) => {
+const Card = ({subject,posts}: ICard) => {
+    const chips = posts.summary.chips?.split(",");
+    const src = `/images/card/${subject}.svg`
     const router = useRouter();
-    // const clickContainer = () => router.push(`/bulletin/html/test/${slug}`)
+    const clickContainer = () => router.push(`/articles/${subject}/${posts.file}`)
     return (
-        <Container onClick={undefined} >
+        <Container onClick={clickContainer} >
             <Square>
-                <img src="/images/card/html5.svg"/>
-                <h1>{summary.title}</h1>
+                <img src={src}/>
+                <h1>{posts.summary.title}</h1>
                 <BtnContainer>
                     <InfoContainer>
                         <Upper>
-                            <Chip />
-                            <Chip />
-                            <Chip />
+                            {chips?.map((text,num)=> <Chip text={text} key={num}/>)}
                         </Upper>
                     </InfoContainer>
                     <Icon icon={<AiOutlineShareAlt />} color={""}></Icon>

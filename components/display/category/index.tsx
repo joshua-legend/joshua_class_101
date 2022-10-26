@@ -11,7 +11,7 @@ interface IMainCategory{
 export interface ISubCategory {
     icon:JSX.Element,
     main:string,
-    sub:string[],
+    link:string,
     color?:string,
 }
 export interface ICategory {

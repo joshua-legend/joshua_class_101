@@ -1,8 +1,11 @@
 ---
 title: 'When to Use Static Generation v.s. Server-side Rendering'
 date: '2020-01-02'
+chips: '솔직히 , 필수염 , 레종'
 ---
+- exe, app은 파일이다.
 
-We recommend using **Static Generation** (with and without data) whenever possible because your page can be built once and served by CDN, which makes it much faster than having a server render the page on every request.
+  # 프로그램이란?
 
-You can use Static Generation for many types of pages, including:
+- 메모리에 적재되어서 실행되는 것이 프로그램
+> 🚀 **명령을 통해서 값을 갱신해 나가는 것**

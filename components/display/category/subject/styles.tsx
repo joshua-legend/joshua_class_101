@@ -1,9 +1,4 @@
 import styled from '@emotion/styled';
-
-interface IDropDown {
-    isOpen: boolean,
-}
-
 interface IWrapper{
     isMainOpen:boolean,
     backgroundColor?:string,
@@ -29,12 +24,4 @@ export const Title = styled.ul`
     line-height: 0.5;
     margin-right:5px;
   }
-`
-
-
-export const Sub_subject = styled.div`
-`
-export const DropDown = styled.div<IDropDown>`
-  display: ${props => (props.isOpen ? 'block' : 'none')};;
-  padding-left: 2px;
 `

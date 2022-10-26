@@ -18,7 +18,18 @@ export const Title = styled.div`
   font-weight: 400;
   font-size: 50px;
 `
-export const CardLayout = styled.section`
+
+export const Empty = styled.div`
+  font-family: 'Black Han Sans', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+`
+
+interface ICardLayout {
+    cardNum:number
+}
+
+export const CardLayout = styled.section<ICardLayout>`
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: ${props => props.cardNum !== 0 ? "repeat(3,1fr)" : "repeat(1,1fr)" };
 `

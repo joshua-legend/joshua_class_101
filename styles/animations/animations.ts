@@ -17,7 +17,6 @@ export const textRainbowShadow = () => keyframes`
             0 0 0 #fb203b, 
             0 0 0 #fefc4b;
     }
-
     20% {  
         transform: translateY(-1em);
         text-shadow: 
@@ -26,7 +25,6 @@ export const textRainbowShadow = () => keyframes`
             0 -0.125em 0 #fb203b, 
             0 -0.25em 0 #fefc4b;
     }
-
     40% {  
         transform: translateY(0.5em);
         text-shadow: 
@@ -35,7 +33,6 @@ export const textRainbowShadow = () => keyframes`
             0 0.0625em 0 #fb203b, 
             0 0.125em 0 #fefc4b;
     }
-    
    60% {
         transform: translateY(-0.25em);
         text-shadow: 

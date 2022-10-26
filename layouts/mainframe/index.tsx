@@ -3,13 +3,13 @@ import {Frame} from "./styles";
 import Contents from "@/layouts/mainframe/contents";
 import Sidebar from "@/layouts/mainframe/sidebar";
 interface IMainFrame {
-    contents:ReactElement<any, any>,
+    modules:ReactElement<any, any>,
 }
-const MainFrame: React.FC<IMainFrame> = ({contents}:IMainFrame) => {
+const MainFrame: React.FC<IMainFrame> = ({modules}:IMainFrame) => {
     return (
         <Frame>
             <Sidebar />
-            <Contents contents={contents} />
+            <Contents contents={modules} />
         </Frame>
     );
 }

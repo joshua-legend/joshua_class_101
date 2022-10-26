@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-
 export const Container = styled.div`
-  margin:1rem 0;
+  margin:3rem 0;
+  width:100%;
 `

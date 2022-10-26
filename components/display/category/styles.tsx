@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import {tiltShaking} from "@/styles/animations/animations";
-import {breakPoint, mq} from "@/styles/mediaquery/mediaquery";
+import {breakPoint, MediaQuery} from "@/styles/mediaquery/mediaquery";
 import {fontSize} from "@/styles/constantsCSS";
 
 interface IMain {background?:string,}
@@ -43,7 +43,7 @@ export const Main = styled.div<IMain>`
       transform-origin: bottom left;
     }
   }
-  ${mq[breakPoint.laptop]}{font-size:${fontSize.regular}px}
+  ${MediaQuery[breakPoint.laptop]}{font-size:${fontSize.regular}px}
 `
 
 export const Title = styled.span`
