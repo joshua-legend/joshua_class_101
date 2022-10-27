@@ -3,7 +3,14 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.div`
   display: flex;
   height: 100vh;
+  margin:auto;
 `;
+
+export const Cards = styled.section`
+  display:flex;
+  margin:auto;
+  height:50%;
+`
 
 export const Card = styled.div`
   background-color: white;
@@ -31,11 +38,10 @@ export const Card = styled.div`
   }
   > p{
     margin: 15px 0px 0px 0px;
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: 'Gamja Flower', cursive;
     font-weight: 100;
-    letter-spacing: -0.25px;
     line-height: 1.25;
-    font-size: 16px;
+    font-size: 20px;
     word-break: break-all;
   }
   >button{

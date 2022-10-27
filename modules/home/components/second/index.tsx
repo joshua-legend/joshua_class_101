@@ -1,33 +1,22 @@
 import React from "react";
-import {Card, Wrapper} from "./styles";
+import {Card, Cards, Wrapper} from "./styles";
+import Reviews from "@/constants/Reviews/Reviews";
 
 
 const Second = ():JSX.Element => {
+    const reviews = Reviews
     return (
         <Wrapper>
-            <div style={{display:"flex"}}>
-                <Card>
-                    <h2>Card</h2>
-                    <hr/>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <button>Next</button>
-                </Card>
-                <Card>
-                    <h2>Card</h2>
-                    <hr/>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <button>Next</button>
-                </Card>
-                <Card>
-                    <h2>Card</h2>
-                    <hr/>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                    <button>Next</button>
-                </Card>
-            </div>
+            <Cards>
+                {reviews.map((content,num)=>{
+                    return(
+                    <Card key={num}>
+                        <h2>{content.subject}</h2>
+                        <hr/>
+                        <p>{content.review}</p>
+                    </Card>)
+                })}
+            </Cards>
         </Wrapper>
     );
 }

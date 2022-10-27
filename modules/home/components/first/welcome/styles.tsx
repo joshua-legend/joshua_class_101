@@ -6,6 +6,7 @@ import {textRainbowShadow} from "@/styles/animations/animations";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: space-around;
 `;
 
@@ -13,26 +14,44 @@ export const Text = styled.div`
   animation: ${()=>textRainbowShadow()} 1.5s ease-in-out 2;
   font-family: 'Black Han Sans', sans-serif;
   font-weight: 400;
-  line-height: 1;
   color: #011a32;
-  font-size: ${fontSize.mega}px;
+  font-size: 55px;
+  white-space: nowrap;
   ${MediaQuery[breakPoint.mobile]} {
-    font-size: ${fontSize.medium}px
+    font-size: 20px
   }
   ${MediaQuery[breakPoint.tablet]} {
-    font-size: ${fontSize.large}px
+    font-size: 30px
+  }
+  ${MediaQuery[breakPoint.laptop]} {
+    font-size: 45px
   }
 `
-
-export const Description = styled.p`
-  
+export const Cards = styled.section`
+  display: flex;
+  justify-content: center;
 `
 
-export const Numbers = styled.dl`
+export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  > span{
+    font-family: 'Gamja Flower', cursive;
+    font-weight: 100;
+    white-space: nowrap;
+  }
+`
+export const Tables = styled.dl`
   display: flex;
   justify-content: space-around;
+  width: 100%;
 `
-
 export const Box = styled.span`
   display: flex;
   flex-direction: column;

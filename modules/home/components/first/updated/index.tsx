@@ -16,7 +16,6 @@ const Updated = (): JSX.Element => {
         {icon:<SiCoursera color="#5A68BB"  size={50} />,color:"#5A68BB"},
         {icon:<SiCplusplus color="#005395"  size={50} />,color:"#005395"},
     ]
-
     return (
         <Wrapper>
             <IconsContainer>
