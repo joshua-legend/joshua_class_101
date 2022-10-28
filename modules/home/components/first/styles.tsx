@@ -11,6 +11,17 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const Bg = styled.div`
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.7;
+`
+
 export const Content = styled.section`
   display: flex;
   flex-direction: row;

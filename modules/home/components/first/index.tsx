@@ -1,7 +1,7 @@
 import React from "react";
-import {Content, Wrapper} from "./styles";
+import {Bg, Content, Wrapper} from "./styles";
 import Welcome from "./welcome";
-import Updated from "./updated";
+import Icons from "./icons";
 
 const First = ():JSX.Element => {
     return (
@@ -10,8 +10,9 @@ const First = ():JSX.Element => {
                 <Welcome/>
             </Content>
             <Content>
-                <Updated />
+                <Icons />
             </Content>
+            <Bg />
         </Wrapper>
     );
 }

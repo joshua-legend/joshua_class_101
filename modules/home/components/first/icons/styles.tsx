@@ -8,6 +8,8 @@ export const Wrapper = styled.div`
 
 interface IBadge {
   background:string;
+  size:number;
+  margin:number;
 }
 
 export const IconsContainer = styled.section`
@@ -17,9 +19,9 @@ export const IconsContainer = styled.section`
 `
 
 export const Badge = styled.article<IBadge>`
-  margin: 1.5em 3em;
-  width: 6.4em;
-  height: 6.4em;
+  margin: ${props => props.margin}em;
+  width: ${props => props.size}em;
+  height: ${props => props.size}em;
   border-radius: 20%;
   display: flex;
   align-items: center;

@@ -11,10 +11,13 @@ export const Wrapper = styled.div`
 `;
 
 export const Text = styled.div`
-  animation: ${()=>textRainbowShadow()} 1.5s ease-in-out 2;
+  //animation: ${()=>textRainbowShadow()} 1.5s ease-in-out 2;
+  color: lightsteelblue;
   font-family: 'Black Han Sans', sans-serif;
   font-weight: 400;
-  color: #011a32;
+  background: linear-gradient(to right, #fbcac9, #8ca6ce);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 55px;
   white-space: nowrap;
   ${MediaQuery[breakPoint.mobile]} {
